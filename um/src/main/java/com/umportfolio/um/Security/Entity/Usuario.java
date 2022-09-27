@@ -4,6 +4,7 @@
  */
 package com.umportfolio.um.Security.Entity;
 
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -22,7 +23,7 @@ import javax.validation.constraints.NotNull;
  * @author uliss
  */
 @Entity
-public class Usuario{
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
