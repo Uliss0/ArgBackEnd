@@ -5,7 +5,6 @@
 package com.umportfolio.um.Security.Entity;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
