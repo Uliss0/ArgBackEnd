@@ -4,9 +4,8 @@
  */
 package com.umportfolio.um.Service;
 
-import com.umportfolio.um.Entity.Experiencia;
-import com.umportfolio.um.Repository.RExperiencia;
-
+import com.umportfolio.um.Entity.Educacion;
+import com.umportfolio.um.Repository.REducacion;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -19,36 +18,33 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Transactional
-public class SExperiencia {
+public class SEducacion {
     @Autowired
-    RExperiencia rExperiencia;
-    
-    public List<Experiencia> list(){
-     return rExperiencia.findAll();
+    REducacion rEducacion;
+    public List<Educacion> list(){
+        return rEducacion.findAll();
+    }
+    public Optional<Educacion>getOne(int id){
+        return rEducacion.findById(id);
+        
+    }
+    public Optional<Educacion>getByNombreE(String nombreE){
+        return rEducacion.findByNombreE(nombreE);
     }
     
-    public Optional<Experiencia> getOne(int id){
-        return rExperiencia.findById(id);
-    }
-    
-    public Optional<Experiencia> getByNombreE(String nombreE){
-        return rExperiencia.findByNombreE(nombreE);
-    }
-    
-    public void save(Experiencia expe){
-        rExperiencia.save(expe);
+    public void save(Educacion educacion){
+        rEducacion.save(educacion);
     }
     
     public void delete(int id){
-        rExperiencia.deleteById(id);
+        rEducacion.deleteById(id);
     }
     
     public boolean existsById(int id){
-        return rExperiencia.existsById(id);
+        return rEducacion.existsById(id);
         
     }
-    
     public boolean existsByNombreE(String nombreE){
-        return rExperiencia.existsByNombreE(nombreE);
+        return rEducacion.existsByNombreE(nombreE);
     }
 }
