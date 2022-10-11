@@ -2,50 +2,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.umportfolio.um.Entity;
+package com.umportfolio.um.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Persona {
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- private int id;
+/**
+ *
+ * @author uliss
+ */
+public class dtoPersona {
 
- 
- @NotNull
- @Size(min=1, max=50, message ="No cumple con la longitud")
- private String nombre;
- 
- @NotNull
- @Size(min=1, max=50, message ="No cumple con la longitud")
- private String apellido;
- 
- private String descripcion;
+    @NotBlank
+    private String nombre;
+    @NotBlank
+    private String apellido;
+    @NotBlank
+    private String descripcion;
+    @NotBlank
+    private String img;
 
- private String img;
-
-    public Persona() {
+    public dtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public dtoPersona(String nombre, String apellido, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
         this.img = img;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -79,9 +62,7 @@ public class Persona {
     public void setImg(String img) {
         this.img = img;
     }
-
- 
     
- 
- 
+    
 }
+
